@@ -1,0 +1,25 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/nav.ejs") %>
+
+<main>
+    <section>
+        <h1><%= about %></h1>
+
+        <div id="contenedor-productos">
+            <% if (productsArray.length === 0) { %>
+                <p class="mensaje mensaje-error">No hay productos para mostrar.</p>
+            <% } %>
+
+            <% productsArray.forEach(producto => { %>
+                <article class="card-producto">
+                    <img src="<%= producto.image %>" alt="<%= producto.name %>">
+                    <h3><%= producto.name %></h3>
+                    <p>Id: <%= producto.id %></p>
+                    <p>$<%= producto.price %></p>
+                </article>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include("partials/footer.ejs") %>

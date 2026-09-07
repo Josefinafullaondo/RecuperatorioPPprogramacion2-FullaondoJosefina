@@ -1,0 +1,259 @@
+:root {
+    --bg: #121214;         /* Fondo oscuro profundo */
+    --surface: #1e1e22;    /* Tarjetas gris oscuro */
+    --text: #ffffff;       /* Texto blanco para alto contraste */
+    --muted: #a1a1aa;      /* Texto secundario gris claro */
+    --brand: #e50914;      /* Rojo vibrante para botones de "Agregar" */
+    --brand-dark: #b80710; /* Rojo oscuro para el hover del botón */
+    --danger: #ef4444;     
+    --border: #2d2d34;     /* Bordes sutiles oscuros */
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    background: var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: white;
+    background: var(--brand);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--brand-dark);
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.btn-secundario {
+    color: var(--bg);
+    background: #e8ecef;
+}
+
+.btn-secundario:hover {
+    background: #dce2e6;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    width: min(1100px, calc(100% - 32px));
+    margin: 24px auto;
+}
+
+.pantalla {
+    display: none;
+}
+
+.pantalla-activa {
+    display: block;
+}
+
+.panel {
+    width: min(460px, 100%);
+    margin: 60px auto;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.section-title h2 {
+    margin: 0;
+}
+
+.section-title p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card-producto,
+.item-carrito,
+.ticket {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.card-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+    
+}
+
+.card-producto:hover {
+    border-color: #00ff80;
+    box-shadow: 0 0 45px rgb(248, 250, 249);
+    transform: scale(1.10);
+    transition: all 0.3s ease;
+}
+
+.card-producto img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #eceff2;
+}
+
+.card-producto h3,
+.card-producto p {
+    margin: 0;
+}
+
+.card-producto p {
+    color: var(--muted);
+}
+
+.precio {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.lista-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-carrito {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+}
+
+.item-carrito h3,
+.item-carrito p {
+    margin: 0;
+}
+
+.controles-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.controles-cantidad button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+}
+
+.btn-quitar {
+    background: var(--danger);
+}
+
+.resumen-carrito {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.ticket {
+    padding: 18px;
+    margin-bottom: 16px;
+}
+
+.ticket h3 {
+    margin-top: 0;
+}
+
+.ticket ul {
+    padding-left: 20px;
+}
+
+.mensaje {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    color: #58151c;
+    border: 1px solid #f1aeb5;
+    background: #f8d7da;
+}
+
+.oculto {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .app-header,
+    .section-title,
+    .resumen-carrito {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .item-carrito {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Integrador - Tienda</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>International Rock Shop</h1>
+        <button id="verCarritoButton" class="btn-secundario" type="button">
+            Carrito <span id="carritoCantidad">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section id="pantallaBienvenida" class="pantalla pantalla-activa">
+            <div class="panel">
+                <h2>¿Cómo te va bestia del Rock&Roll?</h2>
+                <form id="nombreForm" class="formulario">
+                    <label for="nombreUsuario">Rockeá tu nombre acá</label>
+                    <input type="text" id="nombreUsuario" name="nombreUsuario" minlength="2" required>
+                    <button type="submit">Continuar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="pantallaProductos" class="pantalla">
+            <div class="section-title">
+                <h2>Productos</h2>
+                <p id="saludoUsuario"></p>
+            </div>
+            <div id="mensajeProductos" class="mensaje oculto"></div>
+            <div id="contenedorProductos" class="grid-productos"></div>
+        </section>
+
+        <section id="pantallaCarrito" class="pantalla">
+            <div class="section-title">
+                <h2>Carrito</h2>
+                <button id="volverProductosButton" class="btn-secundario" type="button">Volver</button>
+            </div>
+            <div id="contenedorCarrito" class="lista-carrito"></div>
+            <div class="resumen-carrito">
+                <strong>Total: $<span id="carritoTotal">0</span></strong>
+                <button id="confirmarCompraButton" type="button">Confirmar compra</button>
+            </div>
+        </section>
+
+        <section id="pantallaTicket" class="pantalla">
+            <div class="section-title">
+                <h2>Ticket</h2>
+                <button id="nuevaCompraButton" class="btn-secundario" type="button">Nueva compra</button>
+            </div>
+            <div id="ticketContainer" class="ticket"></div>
+            <button id="descargarTicketButton" type="button">Descargar PDF</button>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/ticket.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

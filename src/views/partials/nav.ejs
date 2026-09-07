@@ -1,0 +1,22 @@
+<header>
+    <a class="logo-container" href="/dashboard/index">
+        <span class="logo-text">TP</span>
+    </a>
+
+    <nav>
+        <a href="/dashboard/index">VER</a>
+        <a href="/dashboard/get">CONSULTAR</a>
+        <a href="/dashboard/post">CREAR</a>
+        <a href="/dashboard/put">MODIFICAR</a>
+        <a href="/dashboard/delete">ELIMINAR</a>
+    </nav>
+
+    <div class="session-box">
+        <% if (typeof user !== "undefined" && user) { %>
+            <span><%= user.nombre %></span>
+        <% } %>
+        <form action="/login/destroy" method="post">
+            <input class="btn-logout" type="submit" value="Cerrar sesion">
+        </form>
+    </div>
+</header>

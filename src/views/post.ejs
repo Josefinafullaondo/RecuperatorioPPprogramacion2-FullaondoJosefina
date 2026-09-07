@@ -1,0 +1,51 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/nav.ejs") %>
+
+<main>
+    <section class="form-productos">
+        <div class="form-container">
+            <h1>Crear producto</h1>
+            <form id="postProduct-form" class="form-alta">
+                <label for="nameProd">Nombre</label>
+                <input type="text" name="name" id="nameProd" required>
+
+                <label for="imageProd">Imagen</label>
+                <input type="text" name="image" id="imageProd" required>
+
+                <label for="categoryProd">Categoria</label>
+                <select name="category" id="categoryProd" required>
+                    <option value="album">album musical</option>
+                    <option value="instrumento">instrumento musical</option>
+                </select>
+
+                <label for="priceProd">Precio</label>
+                <input type="number" name="price" id="priceProd" min="1" required>
+
+                <input type="submit" value="Crear producto">
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h1>Crear usuario admin</h1>
+            <form id="postUser-form" class="form-alta">
+                <label for="nameUser">Nombre</label>
+                <input type="text" name="nameUser" id="nameUser" required>
+
+                <label for="emailUser">Email</label>
+                <input type="email" name="emailUser" id="emailUser" required>
+
+                <label for="passwordUser">Password</label>
+                <input type="password" name="passwordUser" id="passwordUser" required>
+
+                <input type="submit" value="Crear usuario">
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <div id="contenedor-productos"></div>
+    </section>
+</main>
+
+<script src="/js/post.js"></script>
+<%- include("partials/footer.ejs") %>

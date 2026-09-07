@@ -1,0 +1,24 @@
+<%- include("partials/head.ejs") %>
+
+<main>
+    <section class="login-panel">
+        <h1>Backoffice</h1>
+        <p><%= about %></p>
+
+        <form id="loginForm" class="form-alta" action="/login" method="POST">
+            <label for="emailUser">Email</label>
+            <input type="email" name="email" id="emailUser" required>
+
+            <label for="passwordUser">Password</label>
+            <input type="password" name="password" id="passwordUser" required>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <% if (typeof error !== "undefined") { %>
+            <p class="mensaje mensaje-error"><%= error %></p>
+        <% } %>
+    </section>
+</main>
+
+<%- include("partials/footer.ejs") %>
